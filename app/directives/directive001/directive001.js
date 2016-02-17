@@ -18,6 +18,14 @@
                 {
                     name: "Structural",
                     description: "Modifies the DOM"
+                },
+                {
+                    name: "Decorator",
+                    description: "Attribute that modifies a current HTML element"
+                },
+                {
+                    name: "Structural",
+                    description: "Modifies the DOM"
                 }
             ];
 
