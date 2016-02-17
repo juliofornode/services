@@ -1,0 +1,59 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">The purpose of this site is to train with AngularJS Directives.</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <p>There are three main kinds of AngularJS directives:</p>
+
+        <ul>
+
+            <li ng-repeat="type in types"> <b>{{ type.name }}</b> - {{ type.description }} </li>
+
+        </ul>
+
+
+        <br>
+        <br>
+        <p><b>Other important notes:</b></p>
+        <ul>
+            <li>We can use the priority attribute to set the order in which several
+                directives will run. Careful, if two directives have the same priority
+                level, that will cause an error.</li>
+
+            <li>We can use the controllerAs attribute and the controllerBind when we
+                want to substitute more than one scope.</li>
+
+            <li>We can use pre-link and post-link functions (just putting the
+                link function into an object with the property "pre" or "post") to
+                set the order in which the link functions of several directives
+                will be run.</li>
+
+            <li>We can use the require attribute to require the controller of
+                another directive. We will need to use ^ if the controller is in a directive
+                placed in a separate DOM element (or node) and ^^ if the controller
+                is in a parent DOM element. We can require more than one controller
+                by using an array. </li>
+
+            <li>We can use services to extract the logic of our directive's controller.</li>
+
+            <li>If we add dependency to the $q service, we can use promises in our custom service. Using
+            a promise allows us to set what to do if the promise fails.</li>
+
+        </ul>
+
+
+    </div>
+
+
+
+
+
+
+
+</div>

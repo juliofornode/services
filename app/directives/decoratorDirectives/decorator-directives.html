@@ -1,0 +1,28 @@
+<div ng-controller="DDcontroller" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">This is the main page for Decorator Directives.</h3>
+
+    </div>
+
+    <div class="panel-body">
+
+        <p>Examples of Decorator Directives:</p>
+
+        <ul>
+
+            <li ng-repeat="decorator in decorators">
+                <b>{{ decorator.name }}</b> - {{ decorator.description }}
+                <p><a ui-sref='{{ decorator.state }}'>Link to the directive</a></p>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+</div>

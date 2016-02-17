@@ -1,0 +1,28 @@
+<div ng-controller="WDcontroller" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">This is the main page for Widget / Component Directives.</h3>
+
+    </div>
+
+    <div class="panel-body">
+
+        <p>Examples of Widget / Component Directives:</p>
+
+        <ul>
+
+            <li ng-repeat="widget in widgets">
+                <b>{{ widget.name }}</b> - {{ widget.description }}
+                <p><a ui-sref='{{ widget.state }}'>Link to the directive</a></p>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+</div>

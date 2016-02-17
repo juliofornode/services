@@ -1,0 +1,30 @@
+<div ng-controller="SDcontroller" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">This is the main page for Structural Directives.</h3>
+
+    </div>
+
+    <div class="panel-body">
+
+        <p>They modify the overall HTML structure.</p>
+
+        <p>Examples of Structural Directives:</p>
+
+        <ul>
+
+            <li ng-repeat="s in structurals">
+                <b>{{ s.name }}</b> - {{ s.description }}
+                <p><a ui-sref='{{ s.state }}'>Link to the directive</a></p>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+</div>
