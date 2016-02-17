@@ -3,13 +3,47 @@
    "use strict";
 
     angular.module('widgetDirectives', [])
-        .controller('WDcontroller', ['$scope', function ($scope) {
+
+        .provider('book', function () {
+
+                this.$get = function () {
+
+                    var name = "El Quijote";
+                    var author = "Miguel de Cervantes";
+                    var version = "1.0";
+
+                    if (includeVersionInTitle) {
+                        name = name + " " + version;
+                    }
+
+                    return {
+                        name: name,
+                        author: author
+                    }
+
+                };
+
+                var includeVersionInTitle = false;
+
+                this.setIncludeVersionInTitle = function (value) {
+                    includeVersionInTitle = value;
+                }
+        })
+
+        .config(function (bookProvider) {
+
+            bookProvider.setIncludeVersionInTitle(true);
+
+        })
+
+
+        .controller('WDcontroller', ['$scope', 'book', function ($scope, book) {
 
             $scope.widgets = [
 
                 {
-                    name: "Template displaying data",
-                    description: "Just a separate template displaying data with ng-repeat",
+                    name: book.name,
+                    description: book.author,
                     state: 'widget001'
                 }
 

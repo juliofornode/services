@@ -4,15 +4,15 @@
 
     angular.module('widget001', [])
 
-        .controller('W1Controller', ['$scope', function ($scope) {
+        .controller('W1Controller', ['$scope', 'book', function ($scope, book) {
 
             $scope.john = {
                 name: "John",
                 age: 44,
                 sisters: [
                     {
-                        name: "Mary",
-                        age: 45
+                        name: book.name,
+                        age: book.author
                     },
                     {
                         name: "Beth",
