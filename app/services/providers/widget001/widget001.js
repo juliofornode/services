@@ -82,7 +82,7 @@
 
                 },
 
-                templateUrl: 'directives/widgetDirectives/widget001/widget001.tpl.html',
+                templateUrl: 'services/providers/widget001/widget001.tpl.html',
 
             }
 
