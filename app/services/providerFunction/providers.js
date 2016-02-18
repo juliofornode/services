@@ -37,13 +37,14 @@
         })
 
 
-        .controller('WDcontroller', ['$scope', 'book', function ($scope, book) {
+        .controller('WDcontroller', ['$scope', function ($scope) {
 
             $scope.widgets = [
 
                 {
-                    name: book.name,
-                    description: book.author,
+                    name: "Example of simple Provider",
+                    description: "The provider function creates a service and allows to configure some of its " +
+                    "components in app.config",
                     state: 'widget001'
                 }
 

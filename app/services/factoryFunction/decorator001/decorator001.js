@@ -4,8 +4,20 @@
 
     angular.module('decorator001', [])
 
-        .controller('ControllerDecorator001', ['$scope', function($scope) {
+        .factory('auto', function () {
+            var brand = "Honda";
+            var model = "Odyssey";
+
+            return {
+                brand: brand,
+                model: model
+            }
+
+        })
+
+        .controller('ControllerDecorator001', ['$scope', 'auto', function($scope, auto) {
             $scope.mySize = 200;
+            $scope.myAuto = auto.brand + " " + auto.model;
         }])
 
         .directive('decorator001', function() {

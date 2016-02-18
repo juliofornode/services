@@ -29,47 +29,47 @@
                 })
                 .state('providers', {
                     url: '/providers',
-                    templateUrl: 'services/providers/providers.html'
+                    templateUrl: 'services/providerFunction/providers.html'
                 })
                 .state('widget001', {
                     url: '/widget001',
-                    templateUrl: 'services/providers/widget001/widget001.html'
+                    templateUrl: 'services/providerFunction/widget001/widget001.html'
                 })
                 .state('decoratorDirectives', {
                     url: '/decoratorDirectives',
-                    templateUrl: 'services/decoratorDirectives/decorator-directives.html'
+                    templateUrl: 'services/factoryFunction/decorator-directives.html'
                 })
                 .state('decorator001', {
                     url: '/decorator001',
-                    templateUrl: 'services/decoratorDirectives/decorator001/decorator001.html'
+                    templateUrl: 'services/factoryFunction/decorator001/decorator001.html'
                 })
                 .state('decorator002', {
                     url: '/decorator002',
-                    templateUrl: 'services/decoratorDirectives/decorator002/decorator002.html'
+                    templateUrl: 'services/factoryFunction/decorator002/decorator002.html'
                 })
                 .state('transclusionDirectives', {
                     url: '/transclusionDirectives',
-                    templateUrl: 'services/transclusionDirectives/transclusion-directives.html'
+                    templateUrl: 'services/serviceFunction/transclusion-directives.html'
                 })
                 .state('transclusion001', {
                     url: '/transclusion001',
-                    templateUrl: 'services/transclusionDirectives/transclusion001/transclusion001.html'
+                    templateUrl: 'services/serviceFunction/transclusion001/transclusion001.html'
                 })
                 .state('transclusion002', {
                     url: '/transclusion002',
-                    templateUrl: 'services/transclusionDirectives/transclusion002/transclusion002.html'
+                    templateUrl: 'services/serviceFunction/transclusion002/transclusion002.html'
                 })
                 .state('structuralDirectives', {
                     url: '/structuralDirectives',
-                    templateUrl: 'services/structuralDirectives/structural-directives.html'
+                    templateUrl: 'services/valueFunction/structural-directives.html'
                 })
                 .state('structural001', {
                     url: '/structural001',
-                    templateUrl: 'services/structuralDirectives/structural001/structural001.html'
+                    templateUrl: 'services/valueFunction/structural001/structural001.html'
                 })
                 .state('structural002', {
                     url: '/structural',
-                    templateUrl: 'services/structuralDirectives/structural002/structural002.html'
+                    templateUrl: 'services/valueFunction/structural002/structural002.html'
                 })
 
         });
