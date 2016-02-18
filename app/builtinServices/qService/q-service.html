@@ -15,7 +15,7 @@
         <p><b>Notes:</b></p>
         <ul>
             <li>We normally use promises to deal with data coming from the server. It's like saying: "ask for this data
-            to the server, and if you get it do this, or in case or error do that".</li>
+            to the server, and if you get it do this, or in case of error do that".</li>
         </ul>
 
 
@@ -27,8 +27,11 @@
             <li>Instead or returning the data, we set the custom service to return a promise of the data. We do that by
             creating a promise with <code>var myPromise = $q.defer();</code> and then returning <code>myPromise.promise;</code>
             </li>
-            <li>In order what the promise is going to deliver in case of success or failure, we use <code>myPromise.resolve()
+            <li>In order to set what the promise is going to deliver in case of success or failure, we use <code>myPromise.resolve()
             </code> and <code>myPromise.reject()</code>.</li>
+            <li>In the controller, we run the service function that gets the promise and use <code>.then(success, failure)</code>
+            to set the two ways to proceed. The success function will have the data as parameter, and the failure
+            function will have the error message as parameter.</li>
 
 
         </ol>
