@@ -32,6 +32,16 @@
             <li>In the controller, we run the service function that gets the promise and use <code>.then(success, failure)</code>
             to set the two ways to proceed. The success function will have the data as parameter, and the failure
             function will have the error message as parameter.</li>
+            <li>As an alternative to <code>.then(success, failure)</code> we can use <code>.then(success).catch(failure)</code>.
+                It give us a higher degree of control.</li>
+            <li>We can also make that the promise sends notifications to the user while it is retrieving the data. We
+            do that by using <code>myPromise.notify()</code> in the factory function and including the getter function
+            as a callback to the <code>.then()</code> in the controller. In this example we are logging the notification in
+            the console.</li>
+            <li>In case we want to do something in case the promise is a success or a failure, we can specify that
+            using <code>.finally()</code>.</li>
+            <li>We can execute a group of promises with <code>$q.all(promise1, promise2)</code>. If we do so, we will get
+            the resulting data in an array (each promise result will be an element of the array).</li>
 
 
         </ol>

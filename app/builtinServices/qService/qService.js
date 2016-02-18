@@ -27,6 +27,7 @@
                     var successful = true;
 
                     if (successful) {
+                        myPromise.notify('getting the data...');
                         myPromise.resolve(name);
                     }
 
@@ -48,7 +49,7 @@
         .controller('ControllerQ', ['$scope', 'book', function ($scope, book) {
 
             book.getBook()
-                .then(getBookSuccess, getBookFailure);
+                .then(getBookSuccess, getBookFailure, getBookNotifications);
 
             function getBookSuccess (name) {
                 $scope.libro = name;
@@ -56,6 +57,10 @@
 
             function getBookFailure (reasonOfFailure) {
                 console.log(reasonOfFailure);
+            }
+
+            function getBookNotifications (message) {
+                console.log(message);
             }
 
 
