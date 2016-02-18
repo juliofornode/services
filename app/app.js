@@ -18,7 +18,8 @@
             'structural002',
             'constantFunction',
             'qService',
-            'routingServices'
+            'routingServices',
+            'cookies'
             ])
 
         .config(function ($stateProvider, $urlRouterProvider) {
@@ -89,6 +90,10 @@
                 .state('routingServices', {
                     url: '/routingServices',
                     templateUrl: 'builtinServices/routingServices/routing-services.html'
+                })
+                .state('cookies', {
+                    url: '/cookies',
+                    templateUrl: 'builtinServices/cookies/cookies.html'
                 })
 
         });
