@@ -19,7 +19,8 @@
             'constantFunction',
             'qService',
             'routingServices',
-            'cookies'
+            'cookies',
+            'log'
             ])
 
         .config(function ($stateProvider, $urlRouterProvider) {
@@ -94,6 +95,10 @@
                 .state('cookies', {
                     url: '/cookies',
                     templateUrl: 'builtinServices/cookies/cookies.html'
+                })
+                .state('log', {
+                    url: '/log',
+                    templateUrl: 'builtinServices/log/log.html'
                 })
 
         });
