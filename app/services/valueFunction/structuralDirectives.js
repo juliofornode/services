@@ -3,12 +3,20 @@
     "use strict";
 
     angular.module('structuralDirectives', [])
-        .controller('SDcontroller', ['$scope', function ($scope) {
+
+        .value('politician', {
+
+                name: "Felipe",
+                lastName: "Gonzalez"
+
+        })
+
+        .controller('SDcontroller', ['$scope', 'politician', function ($scope, politician) {
 
             $scope.structurals = [
 
                 {
-                    name: "Basic example using the transclude function",
+                    name: "This is from Value Function: " + politician.name + " " + politician.lastName,
                     description: "We use transclude: 'element' and the transclude function " +
                     "inside it, we use element.after(cloneOfTranscluded) to replicate what " +
                     "ng-transclude does.",

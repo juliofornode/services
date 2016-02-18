@@ -15,7 +15,8 @@
             'transclusion002',
             'structuralDirectives',
             'structural001',
-            'structural002'
+            'structural002',
+            'constantFunction'
             ])
 
         .config(function ($stateProvider, $urlRouterProvider) {
@@ -70,6 +71,14 @@
                 .state('structural002', {
                     url: '/structural',
                     templateUrl: 'services/valueFunction/structural002/structural002.html'
+                })
+                .state('constantFunction', {
+                    url: '/constantFunction',
+                    templateUrl: 'services/constantFunction/constant-function.html'
+                })
+                .state('dependency-anotations', {
+                    url: '/dependency-anotations',
+                    templateUrl: 'services/dependency-anotations.html'
                 })
 
         });
