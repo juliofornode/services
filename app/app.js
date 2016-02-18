@@ -16,7 +16,8 @@
             'structuralDirectives',
             'structural001',
             'structural002',
-            'constantFunction'
+            'constantFunction',
+            'qService'
             ])
 
         .config(function ($stateProvider, $urlRouterProvider) {
@@ -79,6 +80,10 @@
                 .state('dependency-anotations', {
                     url: '/dependency-anotations',
                     templateUrl: 'services/dependency-anotations.html'
+                })
+                .state('qService', {
+                    url: '/qService',
+                    templateUrl: 'builtinServices/qService/q-service.html'
                 })
 
         });

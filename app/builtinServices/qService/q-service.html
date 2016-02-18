@@ -1,0 +1,40 @@
+<div ng-controller="ControllerQ" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">The $q Service: promises.</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+
+        <p><b>This is a promise coming from a service with a delay of 2 seconds: {{ libro }}</b></p>
+
+        <p><b>Notes:</b></p>
+        <ul>
+            <li>We normally use promises to deal with data coming from the server. It's like saying: "ask for this data
+            to the server, and if you get it do this, or in case or error do that".</li>
+        </ul>
+
+
+        <p><b>Process to create and use a simple promise:</b></p>
+        <ol>
+            <li>We inject $q in the factory function that creates the custom service.</li>
+            <li>For demonstration purposes, we'll use $timeout to simulate the delay that we would experience if we
+            ask for data to the server. $timeout executes a callback after a waiting period in miliseconds.</li>
+            <li>Instead or returning the data, we set the custom service to return a promise of the data. We do that by
+            creating a promise with <code>var myPromise = $q.defer();</code> and then returning <code>myPromise.promise;</code>
+            </li>
+            <li>In order what the promise is going to deliver in case of success or failure, we use <code>myPromise.resolve()
+            </code> and <code>myPromise.reject()</code>.</li>
+
+
+        </ol>
+
+
+    </div>
+
+
+</div>
