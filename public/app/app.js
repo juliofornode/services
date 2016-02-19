@@ -109,6 +109,10 @@
                     url: '/getAll',
                     templateUrl: 'app/networkingServices/httpService/getAll/get-all.html'
                 })
+                .state('updateOne', {
+                    url: '/updateOne/:bookId',
+                    templateUrl: 'app/networkingServices/httpService/updateOne/update-one.html'
+                })
 
         });
 

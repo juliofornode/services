@@ -7,39 +7,56 @@
         .factory('book', ['$http', function ($http) {
 
             return {
-                getAll: getAll
+                getAll: getAll,
+                getOneById: getOneById,
+                updateOne: updateOne
             };
 
-
             function getAll () {
-
                 return $http({
                     method: 'GET',
                     url: 'api/books'
                 })
-                    .then(getAllResponse)
-                    .catch(getAllError);
+                    .then(getResponse)
+                    .catch(getError);
 
             }
 
-            function getAllResponse (response) {
+            function getOneById (bookId) {
+                return $http({
+                    method: 'GET',
+                    url: 'api/books/' + bookId
+                })
+                    .then(getResponse)
+                    .catch(getError);
+            }
+
+            function updateOne (book) {
+                return $http({
+                    method: 'PUT',
+                    url: 'api/books/' + book.book_id,
+                    data: book
+                })
+                    .then(getUpdateResponse)
+                    .catch(getError);
+            }
+
+            function getResponse (response) {
                 return response.data;
             }
 
-            function getAllError (error) {
+            function getUpdateResponse (response) {
+                return "Updated:" + response.config.data.title;
+            }
+
+            function getError (error) {
                 return $q.reject ("Error: " + response.status);
             }
 
 
-
-
-
-
-
-
         }])
 
-        .controller('ControllerHttp', ['$scope', 'book', function ($scope, book) {
+        .controller('ControllerGetAll', ['$scope', 'book', function ($scope, book) {
 
             book.getAll ()
                 .then (getAllSuccess)
@@ -52,6 +69,39 @@
             function getAllError (error) {
                 console.log(error);
             }
+
+        }])
+
+        .controller('ControllerUpdateOne', ['$scope', 'book', '$stateParams', '$location', function ($scope, book, $stateParams, $location) {
+
+            book.getOneById($stateParams.bookId)
+                .then(getOneByIdSuccess)
+                .catch(getOneByIdError);
+
+            function getOneByIdSuccess (libro) {
+                $scope.libro = libro;
+            }
+
+            function getOneByIdError (error) {
+                $log(error);
+            }
+
+
+            $scope.saveBook = function () {
+                book.updateOne($scope.libro)
+                    .then(saveSuccess)
+                    .catch(saveError);
+            };
+
+            function saveSuccess (libro) {
+                console.log(libro, " updated");
+                $location.path('getAll');
+            }
+
+            function saveError (error) {
+                console.log(error);
+            }
+
 
 
         }])
