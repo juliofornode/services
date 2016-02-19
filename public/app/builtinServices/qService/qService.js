@@ -6,7 +6,7 @@
 
         // we use $timeout here to simulate the delay when getting data from the server.
 
-        .factory('book', ['$q', '$timeout', function ($q, $timeout) {
+        .factory('segundolibro', ['$q', '$timeout', function ($q, $timeout) {
 
             return {
                 getBook: getBook
@@ -46,9 +46,9 @@
 
         }])
 
-        .controller('ControllerQ', ['$scope', 'book', function ($scope, book) {
+        .controller('ControllerQ', ['$scope', 'segundolibro', function ($scope, segundolibro) {
 
-            book.getBook()
+            segundolibro.getBook()
                 .then(getBookSuccess, getBookFailure, getBookNotifications);
 
             function getBookSuccess (name) {

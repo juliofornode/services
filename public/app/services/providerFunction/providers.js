@@ -4,7 +4,7 @@
 
     angular.module('widgetDirectives', [])
 
-        .provider('book', function () {
+        .provider('elquijote', function () {
 
                 this.$get = function () {
 
@@ -30,9 +30,9 @@
                 }
         })
 
-        .config(function (bookProvider) {
+        .config(function (elquijoteProvider) {
 
-            bookProvider.setIncludeVersionInTitle(true);
+            elquijoteProvider.setIncludeVersionInTitle(true);
 
         })
 
@@ -57,4 +57,4 @@
         })
 
 
-}())
+}());

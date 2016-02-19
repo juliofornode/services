@@ -4,15 +4,15 @@
 
     angular.module('widget001', [])
 
-        .controller('W1Controller', ['$scope', 'book', function ($scope, book) {
+        .controller('W1Controller', ['$scope', 'elquijote', function ($scope, elquijote) {
 
             $scope.john = {
                 name: "John",
                 age: 44,
                 sisters: [
                     {
-                        name: book.name,
-                        age: book.author
+                        name: elquijote.name,
+                        age: elquijote.author
                     },
                     {
                         name: "Beth",
@@ -82,7 +82,7 @@
 
                 },
 
-                templateUrl: 'services/providers/widget001/widget001.tpl.html',
+                templateUrl: 'app/services/providerFunction/widget001/widget001.tpl.html',
 
             }
 
