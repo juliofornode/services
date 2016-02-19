@@ -20,7 +20,8 @@
             'qService',
             'routingServices',
             'cookies',
-            'log'
+            'log',
+            'httpService'
             ])
 
         .config(function ($stateProvider, $urlRouterProvider) {
@@ -99,6 +100,10 @@
                 .state('log', {
                     url: '/log',
                     templateUrl: 'builtinServices/log/log.html'
+                })
+                .state('httpService', {
+                    url: '/httpService',
+                    templateUrl: 'networkingServices/httpService/http-service.html'
                 })
 
         });
