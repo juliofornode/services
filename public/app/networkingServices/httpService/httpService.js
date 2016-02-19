@@ -7,29 +7,32 @@
         .factory('book', ['$http', function ($http) {
 
             return {
+<<<<<<< HEAD:public/app/networkingServices/httpService/httpService.js
                 getAll: getAll
+=======
+                getBook: getBook
+>>>>>>> parent of 30aac90... before adding the server side:app/networkingServices/httpService/httpService.js
             };
 
 
-            function getAll () {
+            function getBook () {
 
                 return $http({
                     method: 'GET',
                     url: 'api/books'
                 })
-                    .then(getAllResponse)
-                    .catch(getAllError);
+                    .then(getResponse)
+                    .catch(getError);
 
             }
 
-            function getAllResponse (response) {
+            function getResponse (response) {
                 return response.data;
             }
 
-            function getAllError (error) {
+            function getError (error) {
                 return $q.reject ("Error: " + response.status);
             }
-
 
 
 
@@ -41,15 +44,15 @@
 
         .controller('ControllerHttp', ['$scope', 'book', function ($scope, book) {
 
-            book.getAll ()
-                .then (getAllSuccess)
-                .catch (getAllError);
+            book.getBook ()
+                .then (getBookSuccess)
+                .catch (getBookError);
 
-            function getAllSuccess (theBooks) {
-                $scope.libros = theBooks;
+            function getBookSuccess (theBook) {
+                $scope.libro = theBook.title;
             }
 
-            function getAllError (error) {
+            function getBookError (error) {
                 console.log(error);
             }
 
