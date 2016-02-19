@@ -7,8 +7,7 @@
         .factory('book', ['$http', function ($http) {
 
             return {
-                getAll: getAll,
-                getById: getById
+                getAll: getAll
             };
 
 
@@ -16,7 +15,7 @@
 
                 return $http({
                     method: 'GET',
-                    url: 'content/book.json'
+                    url: 'api/books'
                 })
                     .then(getAllResponse)
                     .catch(getAllError);
