@@ -105,13 +105,10 @@
                     url: '/httpService',
                     templateUrl: 'app/networkingServices/httpService/http-service.html'
                 })
-<<<<<<< HEAD:public/app/app.js
                 .state('getAll', {
                     url: '/getAll',
                     templateUrl: 'app/networkingServices/httpService/getAll/get-all.html'
                 })
-=======
->>>>>>> parent of 30aac90... before adding the server side:app/app.js
 
         });
 

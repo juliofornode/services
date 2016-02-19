@@ -42,7 +42,7 @@
 
             return {
                 restrict: 'E',
-                templateUrl: 'app/services/home/directive001.tpl.html'
+                templateUrl: 'services/home/directive001.tpl.html'
             }
 
         })
