@@ -105,6 +105,10 @@
                     url: '/httpService',
                     templateUrl: 'networkingServices/httpService/http-service.html'
                 })
+                .state('getAll', {
+                    url: '/getAll',
+                    templateUrl: 'networkingServices/httpService/getAll/get-all.html'
+                })
 
         });
 

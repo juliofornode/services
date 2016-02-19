@@ -7,28 +7,30 @@
         .factory('book', ['$http', function ($http) {
 
             return {
-                getBook: getBook
+                getAll: getAll,
+                getById: getById
             };
 
 
-            function getBook () {
+            function getAll () {
 
                 return $http({
                     method: 'GET',
                     url: 'content/book.json'
                 })
-                    .then(getResponse)
-                    .catch(getError);
+                    .then(getAllResponse)
+                    .catch(getAllError);
 
             }
 
-            function getResponse (response) {
+            function getAllResponse (response) {
                 return response.data;
             }
 
-            function getError (error) {
+            function getAllError (error) {
                 return $q.reject ("Error: " + response.status);
             }
+
 
 
 
@@ -40,15 +42,15 @@
 
         .controller('ControllerHttp', ['$scope', 'book', function ($scope, book) {
 
-            book.getBook ()
-                .then (getBookSuccess)
-                .catch (getBookError);
+            book.getAll ()
+                .then (getAllSuccess)
+                .catch (getAllError);
 
-            function getBookSuccess (theBook) {
-                $scope.libro = theBook.title;
+            function getAllSuccess (theBooks) {
+                $scope.libros = theBooks;
             }
 
-            function getBookError (error) {
+            function getAllError (error) {
                 console.log(error);
             }
 

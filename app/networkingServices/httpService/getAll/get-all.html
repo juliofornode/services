@@ -1,0 +1,28 @@
+<div ng-controller="ControllerHttp" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title">The $http Service: get all</h3>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <p><b>This is from a JSON file:</b></p>
+
+        <div class="well well-default" ng-repeat="libro in libros">
+
+            <p><b>Title:</b> {{ libro.title }} </p>
+            <p><b>Author:</b> {{ libro.author}} </p>
+            <p><b>Year published:</b> {{ libro.year_published }}  </p>
+            <p><b>Id:</b> {{ libro.book_id }} </p>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
