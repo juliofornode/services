@@ -9,7 +9,7 @@
             return {
                 getAll: getAll,
                 getOneById: getOneById,
-                updateOne: updateOne
+                updateOne: putUpdateOne
             };
 
             function getAll () {
@@ -31,7 +31,7 @@
                     .catch(getError);
             }
 
-            function updateOne (book) {
+            function putUpdateOne (book) {
                 return $http({
                     method: 'PUT',
                     url: 'api/books/' + book.book_id,
@@ -86,9 +86,8 @@
                 $log(error);
             }
 
-
             $scope.saveBook = function () {
-                book.updateOne($scope.libro)
+                book.putUpdateOne($scope.libro)
                     .then(saveSuccess)
                     .catch(saveError);
             };
