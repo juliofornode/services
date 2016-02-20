@@ -1,14 +1,20 @@
 [
     {
-        "book_id": 2,
-        "title": "Green Eggs and Jamon de Jabugo",
-        "author": "Dr. Seuss",
-        "year_published": "1969"
-    },
-    {
-        "book_id": 3,
+        "book_id": 1,
         "title": "El Quijote de La Mancha",
         "author": "Miguel de Cervantes",
         "year_published": "1492"
+    },
+    {
+        "book_id": 2,
+        "title": "El Buscon",
+        "author": "Francisco de Quevedp",
+        "year_published": "1512"
+    },
+    {
+        "book_id": 3,
+        "title": "La Nausea",
+        "author": "Albert Camus",
+        "year_published": "1973"
     }
 ]

@@ -33,7 +33,7 @@
 
             <li><b>Get one by id:</b>
                 <ol>
-                    <li>In the route definition, we use a token to include the parameter in the url api/items/:item</li>
+                    <li>In the route definition, we use a token to include the parameter in the url api/items/:id</li>
                     <li>In the service, the function getOneById takes id as parameter and returns $http with
                         the get method, the api/items/+id url as a promise with .then (response.data) and
                         .catch ($q.reject) options.</li>
