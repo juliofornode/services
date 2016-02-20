@@ -3,7 +3,7 @@
     "use strict";
 
     angular.module('caching', [])
-        .controller('ControllerCaching', ['$scope', function ($scope) {
+        .controller('ControllerCaching', ['$scope', '$cacheFactory', function ($scope, $cacheFactory) {
 
         }])
 
