@@ -117,6 +117,10 @@
                     url:'/createOne',
                     templateUrl: 'app/networkingServices/httpService/createOne/create-one.html'
                 })
+                .state('transformations', {
+                    url: '/transformations',
+                    templateUrl: 'app/networkingServices/transformations-and-interceptors/transformations-and-interceptors.html'
+                })
 
         });
 
