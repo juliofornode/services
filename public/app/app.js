@@ -21,7 +21,8 @@
             'routingServices',
             'cookies',
             'log',
-            'httpService'
+            'httpService',
+            'resourceService'
             ])
 
         .config(function ($stateProvider, $urlRouterProvider) {
@@ -120,6 +121,10 @@
                 .state('transformations', {
                     url: '/transformations',
                     templateUrl: 'app/networkingServices/transformations-and-interceptors/transformations-and-interceptors.html'
+                })
+                .state('resourceService', {
+                    url: '/resourceService',
+                    templateUrl: 'app/networkingServices/resourceService/resource-service.html'
                 })
 
         });
