@@ -9,6 +9,8 @@
 
     <div class="panel-body">
 
+        <a ui-sref="createOne">Create a new Book.</a>
+
         <p><b>This is from the server:</b></p>
 
         <div class="well well-default" ng-repeat="libro in libros">
@@ -18,6 +20,7 @@
             <p><b>Year published:</b> {{ libro.year_published }}  </p>
             <p><b>Id:</b> {{ libro.book_id }} </p>
             <a href="#/updateOne/{{ libro.book_id }}">Edit</a>
+            <a ng-click="deleteOne(libro.book_id)">Delete</a>
 
         </div>
 

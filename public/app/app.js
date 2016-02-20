@@ -113,6 +113,10 @@
                     url: '/updateOne/:bookId',
                     templateUrl: 'app/networkingServices/httpService/updateOne/update-one.html'
                 })
+                .state('createOne', {
+                    url:'/createOne',
+                    templateUrl: 'app/networkingServices/httpService/createOne/create-one.html'
+                })
 
         });
 

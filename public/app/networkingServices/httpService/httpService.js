@@ -9,7 +9,9 @@
             return {
                 getAll: getAll,
                 getOneById: getOneById,
-                updateOne: putUpdateOne
+                putUpdateOne: putUpdateOne,
+                createOne: createOne,
+                deleteOne: deleteOne
             };
 
             function getAll () {
@@ -41,12 +43,39 @@
                     .catch(getError);
             }
 
+            function createOne (newBook) {
+                return $http({
+                    method: 'POST',
+                    url: 'api/books',
+                    data: newBook
+                })
+                    .then(createOneResponse)
+                    .catch(getError)
+            }
+
+            function deleteOne (bookId) {
+                return $http({
+                    method: 'DELETE',
+                    url: 'api/books/' + bookId
+                })
+                    .then(deleteOneResponse)
+                    .catch(getError);
+            }
+
             function getResponse (response) {
                 return response.data;
             }
 
             function getUpdateResponse (response) {
                 return "Updated:" + response.config.data.title;
+            }
+
+            function createOneResponse (response) {
+                return "Created:" + response.config.data.title;
+            }
+
+            function deleteOneResponse (response) {
+                console.log("deleted");
             }
 
             function getError (error) {
@@ -56,7 +85,7 @@
 
         }])
 
-        .controller('ControllerGetAll', ['$scope', 'book', function ($scope, book) {
+        .controller('ControllerGetAll', ['$scope', 'book', '$stateParams', '$state', function ($scope, book, $stateParams, $state) {
 
             book.getAll ()
                 .then (getAllSuccess)
@@ -67,6 +96,21 @@
             }
 
             function getAllError (error) {
+                console.log(error);
+            }
+
+            $scope.deleteOne = function (bookId) {
+                book.deleteOne(bookId)
+                    .then(deleteSuccess)
+                    .catch(deleteError)
+            };
+
+            function deleteSuccess (response) {
+                console.log('deleted');
+                $state.go($state.current, {}, {reload: true});
+            }
+
+            function deleteError (error) {
                 console.log(error);
             }
 
@@ -101,7 +145,26 @@
                 console.log(error);
             }
 
+        }])
 
+        .controller('ControllerCreateOne', ['$scope', 'book', '$location', function ($scope, book, $location) {
+
+            $scope.newBook = {};
+
+            $scope.createOne = function () {
+                book.createOne($scope.newBook)
+                    .then(createSuccess)
+                    .catch(createError);
+            };
+
+            function createSuccess (response) {
+                console.log(response);
+                $location.path('getAll');
+            }
+
+            function createError (error) {
+                console.log(error);
+            }
 
         }])
 
