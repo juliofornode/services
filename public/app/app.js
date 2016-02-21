@@ -25,7 +25,8 @@
             'resourceService',
             'ngResource',
             'cachingSharing',
-            'caching'
+            'caching',
+            'sharing'
             ])
 
         .config(function ($stateProvider, $urlRouterProvider) {
@@ -136,6 +137,10 @@
                 .state('caching', {
                     url: '/caching',
                     templateUrl: 'app/cachingSharing/caching/caching.html'
+                })
+                .state('sharing', {
+                    url: '/sharing',
+                    templateUrl: 'app/cachingSharing/sharing/sharing.html'
                 })
 
         });
