@@ -37,7 +37,34 @@
             <li>removeAll(): remove all items in the object.</li>
             <li>destroy(): remove the object.</li>
             <li>info(): basic info about the object (name, size...)</li>
+            <li>To remove the cache when the data changed in the server, just include
+                <code>cachedObjectName.remove(valueName)</code> at the end of the functions that
+            perform the operations that change the database (add, edit and remove)</li>
         </ul>
+
+
+
+        <p><b>Example of $cacheFactory:</b></p>
+
+        <input ng-model="newCacheKey" placeholder="Key">
+        <input ng-model="newCacheValue" placeholder="Value">
+        <button ng-click="saveToCachedObject(newCacheKey, newCacheValue)">saveToCachedObject</button>
+
+        <p ng-if="keys.length">Cached Values from cachedObject.get(key)</p>
+        <div ng-repeat="key in keys">
+            <span>{{ key }}</span>
+            <span>: </span>
+            <b>{{ cachedObject.get(key) }}</b>
+        </div>
+
+        <br>
+        <p>Cache Info</p>
+        <div ng-repeat="(key, value) in cachedObject.info()">
+            <span>{{ key }}</span>
+            <span>: </span>
+            <b>{{ value }}</b>
+        </div>
+
 
 
     </div>
