@@ -12,6 +12,31 @@
         <p><b>Notes:</b></p>
         <ul>
             <li>Service decorators modify the behavior of existing services.</li>
+            <li>Sometimes we can find the expression "wrappers" as synonymous to
+            decorators.</li>
+            <li>We use the decorator function to create the decorator services in the
+                module config:
+                <code>
+
+                    app.config(function ($provide) {
+                        $provide.decorator('serviceDecorated', decoratorName)
+                    });
+
+                    function decoratorName ($delegate) {
+
+                        return {
+                            serviceDecorated: serviceDecorated
+                        }
+
+                        function serviceDecorated (p1) {
+                            $delegate.serviceDecorated(p1.toUpperCase);
+                        }
+                    }
+
+
+
+
+                </code></li>
 
         </ul>
 
