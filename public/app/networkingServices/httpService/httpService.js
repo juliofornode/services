@@ -4,7 +4,7 @@
 
     angular.module('httpService', [])
 
-        .factory('book', ['$http', function ($http) {
+        .factory('book', ['$http', '$cacheFactory', function ($http, $cacheFactory) {
 
             return {
                 getAll: getAll,
@@ -17,10 +17,23 @@
             function getAll () {
                 return $http({
                     method: 'GET',
-                    url: 'api/books'
+                    url: 'api/books',
+                    cache: true
                 })
                     .then(getResponse)
                     .catch(getError);
+
+            }
+
+            //Clear the cached object. To be used in the CRUD operations that
+            //change the server data. Important: call it in the operations defined
+            //in the service, not in the controller. And call it before returning
+            //the new $http object.
+            function clearCache () {
+
+                var cachedObject = $cacheFactory.get('$http');
+
+                cachedObject.remove('api/books');
 
             }
 
@@ -34,6 +47,9 @@
             }
 
             function putUpdateOne (book) {
+
+                clearCache();
+
                 return $http({
                     method: 'PUT',
                     url: 'api/books/' + book.book_id,
@@ -44,6 +60,9 @@
             }
 
             function createOne (newBook) {
+
+                clearCache();
+
                 return $http({
                     method: 'POST',
                     url: 'api/books',
@@ -54,6 +73,9 @@
             }
 
             function deleteOne (bookId) {
+
+                clearCache();
+
                 return $http({
                     method: 'DELETE',
                     url: 'api/books/' + bookId
@@ -100,9 +122,11 @@
             }
 
             $scope.deleteOne = function (bookId) {
+
                 book.deleteOne(bookId)
                     .then(deleteSuccess)
-                    .catch(deleteError)
+                    .catch(deleteError);
+
             };
 
             function deleteSuccess (response) {
@@ -131,9 +155,11 @@
             }
 
             $scope.saveBook = function () {
+
                 book.putUpdateOne($scope.libro)
                     .then(saveSuccess)
                     .catch(saveError);
+
             };
 
             function saveSuccess (libro) {
@@ -152,9 +178,11 @@
             $scope.newBook = {};
 
             $scope.createOne = function () {
+
                 book.createOne($scope.newBook)
                     .then(createSuccess)
                     .catch(createError);
+
             };
 
             function createSuccess (response) {

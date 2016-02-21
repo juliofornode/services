@@ -67,6 +67,23 @@
 
 
 
+        <br>
+        <p><b>Caching $http requests.</b></p>
+        <ul>
+            <li>Caching $http requests is a good way to improve the performance of our application. Doing that is like
+            saying: store the data in the cache and reload it from the server only when it has changed.</li>
+            <li>In order to cache an $http request, we just have to include the option <code>cache: true</code> in
+            the $http object configuration.</li>
+            <li>Once we have the cachingObject generated, we must clear the cache every time data changes (it happens
+            with operations like update or remove). To do that, we first get the cached object doing
+                <code>var cachingObject = $cacheFactory.get('$http')</code> and then call
+                <code>cachingObject.remove('api/books')</code></li>
+            <li>We have an example of this <a ui-sref="getAll">here</a>. Important: see the comments written before
+                the clearCache function in networkingServices/httpService/httpService.js</li>
+        </ul>
+
+
+
     </div>
 
 
