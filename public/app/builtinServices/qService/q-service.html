@@ -38,7 +38,7 @@
             do that by using <code>myPromise.notify()</code> in the factory function and including the getter function
             as a callback to the <code>.then()</code> in the controller. In this example we are logging the notification in
             the console.</li>
-            <li>In case we want to do something in case the promise is a success or a failure, we can specify that
+            <li>In case we want to do something no matter the promise is a success or a failure, we can specify that
             using <code>.finally()</code>.</li>
             <li>We can execute a group of promises with <code>$q.all(promise1, promise2)</code>. If we do so, we will get
             the resulting data in an array (each promise result will be an element of the array).</li>
