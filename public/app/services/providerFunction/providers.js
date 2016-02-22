@@ -36,7 +36,6 @@
 
         })
 
-
         .controller('WDcontroller', ['$scope', function ($scope) {
 
             $scope.widgets = [
@@ -52,6 +51,7 @@
             ];
 
         }])
+
         .directive('widgetDirectives', function () {
 
         })

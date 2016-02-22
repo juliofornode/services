@@ -32,9 +32,10 @@
             ];
 
         }])
+
         .directive('structuralDirectives', function () {
 
         })
 
 
-}())
+}());

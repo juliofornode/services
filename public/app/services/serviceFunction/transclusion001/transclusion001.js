@@ -29,6 +29,7 @@
             $scope.jugadores = soccerTeam.numberOfPlayers;
 
         }])
+
         .directive('transclusion001', function () {
 
             return {
