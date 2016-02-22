@@ -5,7 +5,7 @@
     angular.module('caching', [])
         .controller('ControllerCaching', ['$scope', '$cacheFactory', function ($scope, $cacheFactory) {
 
-            //creates an empty array for the keys so it can tracks the length in the view
+            //creates an empty array for the keys so it can track the length in the view
             $scope.keys = [];
 
             $scope.cachedObject = $cacheFactory('cacheId');
